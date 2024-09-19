@@ -3,48 +3,286 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 - Not Found</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <title>David Montero Loaiza</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
+        :root {
+            --background-color: #ffffff;
+            --text-color: #000000;
+            --accent-color: #ff33f9;
+        }
+        
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Lexend', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .nav {
+            background-color: var(--background-color);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav ul {
+            display: flex;
+            justify-content: flex-end;
+            list-style-type: none;
+            padding: 1rem 2rem;
+        }
+        
+        .nav li {
+            margin-left: 2rem;
+        }
+        
+        .nav li a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        
+        .nav li a:hover {
+            color: var(--accent-color);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        #about {
+            display: flex;
+            align-items: center;
+            min-height: 60vh;
+            padding: 4rem 0;
+        }
+        
+        .info {
+            flex: 2;
+            padding-right: 4rem;
+        }
+        
+        .name {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--text-color);
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .summary {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-out 0.5s;
+            animation-fill-mode: both;
+        }
+
+	.paragraph {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+	    text-align: center;
+        }
+        
+        .image {
+            flex: 1;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            background-color: #f0f0f0;
-            font-family: 'Playfair Display', serif;
-            overflow: hidden;
         }
-        .container {
+        
+        .profile-pic {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            animation: fadeInRight 1s ease-out;
+        }
+        
+        #projects {
+            padding: 4rem 0;
+        }
+        
+        h2 {
+            font-size: 3rem;
+            color: var(--text-color);
+            margin-bottom: 2rem;
             text-align: center;
         }
-        .error-code {
-            font-size: 15vw;
-            color: #333;
-            animation: bounce 2s infinite;
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
         }
-        .error-message {
-            font-size: 1.5rem;
-            color: #666;
-            margin-top: 20px;
+        
+        .gallery-item {
+            background-color: var(--background-color);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            color: var(--text-color);
         }
-        @keyframes bounce {
-            0%, 100% {
+        
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+	    color: var(--accent-color);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .gallery-item-content {
+            padding: 1rem;
+        }
+        
+        .gallery-item h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .gallery-item p {
+            font-size: 0.9rem;
+            color: var(--text-color);
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
                 transform: translateY(0);
             }
-            50% {
-                transform: translateY(-30px);
+        }
+        
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            #about {
+                flex-direction: column;
+                text-align: center;
+            }
+            .info {
+                padding-right: 0;
+                margin-bottom: 2rem;
+            }
+            .nav ul {
+                justify-content: center;
             }
         }
     </style>
 </head>
 <body>
+    <nav class="nav">
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+        </ul>
+    </nav>
+    
     <div class="container">
-        <div class="error-code">404</div>
-        <div class="error-message">Sorry, David Montero Loaiza not found in this Ur!</div>
-        <div class="error-message">Please try again later</div>
+        <section id="about">
+            <div class="info">
+                <h1 class="name">David Montero Loaiza</h1>
+                <p class="summary">
+                    Earth System Researcher.
+		    PhD Candidate at Leipzig University.
+		    Google Developer Expert for Google Earth Engine.
+                </p>
+            </div>
+            <div class="image">
+                <img src="profile-pic.jpeg" alt="David Montero Loaiza" class="profile-pic">
+            </div>
+        </section>
+        
+        <section id="projects">
+            <h2>Open Source Projects</h2>
+	    <p class="paragraph">
+		Here you can find some of the open source projects I have developed.
+	    </p>
+            <div class="gallery">
+                <a href="https://github.com/awesome-spectral-indices/awesome-spectral-indices" class="gallery-item">
+                    <img src="asi.png" alt="ASI">
+                    <div class="gallery-item-content">
+                        <h3>Awesome Spectral Indices</h3>
+                        <p>A ready-to-use curated list of Spectral Indices for Remote Sensing applications.</p>
+                    </div>
+                </a>
+                <a href="https://github.com/awesome-spectral-indices/spectral" class="gallery-item">
+                    <img src="spectral.png" alt="spectral">
+                    <div class="gallery-item-content">
+                        <h3>spectral</h3>
+                        <p>Awesome Spectral Indices for the Google Earth Engine JavaScript API (Code Editor).</p>
+                    </div>
+                </a>
+                <a href="https://github.com/awesome-spectral-indices/spyndex" class="gallery-item">
+                    <img src="spyndex.png" alt="spyndex">
+                    <div class="gallery-item-content">
+                        <h3>spyndex</h3>
+                        <p>Awesome Spectral Indices in Python.</p>
+                    </div>
+                </a>
+                <a href="https://github.com/ESDS-Leipzig/cubo" class="gallery-item">
+                    <img src="cubo.png" alt="cubo">
+                    <div class="gallery-item-content">
+                        <h3>cubo</h3>
+                        <p>On-Demand Earth System Data Cubes (ESDCs) in Python.</p>
+                    </div>
+                </a>
+            </div>
+        </section>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav a');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 60,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
