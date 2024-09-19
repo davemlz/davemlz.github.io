@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Not Found</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: 'Playfair Display', serif;
+            overflow: hidden;
+        }
+        .container {
+            text-align: center;
+        }
+        .error-code {
+            font-size: 15vw;
+            color: #333;
+            animation: bounce 2s infinite;
+        }
+        .error-message {
+            font-size: 1.5rem;
+            color: #666;
+            margin-top: 20px;
+        }
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-30px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="error-code">404</div>
+        <div class="error-message">Sorry, David Montero Loaiza not found in this Ur!</div>
+        <div class="error-message">Please try again later</div>
+    </div>
+</body>
+</html>
