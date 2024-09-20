@@ -17,6 +17,10 @@
             padding: 0;
             box-sizing: border-box;
         }
+
+	a {
+	    color: var(--accent-color);
+	}
         
         body {
             font-family: 'Lexend', sans-serif;
@@ -66,7 +70,7 @@
             display: flex;
             align-items: center;
             min-height: 60vh;
-            padding: 4rem 0;
+            padding: 4rem 0 1rem;
         }
         
         .info {
@@ -83,7 +87,7 @@
         }
         
         .summary {
-            font-size: 1.1rem;
+            font-size: 1.5rem;
             margin-bottom: 2rem;
             animation: fadeInUp 1s ease-out 0.5s;
             animation-fill-mode: both;
@@ -110,8 +114,24 @@
             box-shadow: 0 10px 20px rgba(0,0,0,0.2);
             animation: fadeInRight 1s ease-out;
         }
-        
+
         #projects {
+            padding: 4rem 0;
+        }
+
+        #affiliations {
+            padding: 1rem 0 4rem;
+        }
+        
+        #links {
+            padding: 4rem 0;
+        }
+
+        #publications {
+            padding: 4rem 0;
+        }
+
+        #youtube {
             padding: 4rem 0;
         }
         
@@ -162,7 +182,13 @@
         
         .gallery-item p {
             font-size: 0.9rem;
-            color: var(--text-color);
+            
+        }
+
+        .youtube {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 2rem;
         }
         
         @keyframes fadeInUp {
@@ -207,6 +233,9 @@
         <ul>
             <li><a href="#about">About</a></li>
             <li><a href="#projects">Projects</a></li>
+            <li><a href="#publications">Publications</a></li>
+            <li><a href="#youtube">YouTube</a></li>
+            <li><a href="#links">Links</a></li>
         </ul>
     </nav>
     
@@ -215,8 +244,8 @@
             <div class="info">
                 <h1 class="name">David Montero Loaiza</h1>
                 <p class="summary">
-                    Earth System Researcher.
-		    PhD Candidate at Leipzig University.
+                    Earth System Researcher and Open-Source Developer.<br>
+		    PhD Candidate at Leipzig University.<br>
 		    Google Developer Expert for Google Earth Engine.
                 </p>
             </div>
@@ -224,11 +253,27 @@
                 <img src="profile-pic.jpeg" alt="David Montero Loaiza" class="profile-pic">
             </div>
         </section>
+
+        <section id="affiliations">
+		<div id="affiliations" class="summary">
+		  <div class="logo-container" style="display: flex; justify-content: space-around; align-items: center;">
+		    <a href="https://www.uni-leipzig.de/personenprofil/mitarbeiter/david-montero" target="_blank">
+		      <img src="unileipzig.png" alt="Leipzig University" style="height: 60px;">
+		    </a>
+		    <a href="https://www.idiv.de/en/profile/1994.html" target="_blank">
+		      <img src="idiv.png" alt="iDiv" style="height: 60px;">
+		    </a>
+		    <a href="https://developers.google.com/profile/u/dmlmont?hl=es-419" target="_blank">
+		      <img src="gde.png" alt="Google Developer Expert" style="height: 60px;">
+		    </a>
+		  </div>
+		</div>
+        </section>
         
         <section id="projects">
             <h2>Open Source Projects</h2>
 	    <p class="paragraph">
-		Here you can find some of the open source projects I have developed.
+		Here you can find some of the open source projects I have developed. For the full list please feel free to visit my <a href="https://github.com/davemlz">GitHub</a> profile.
 	    </p>
             <div class="gallery">
                 <a href="https://github.com/awesome-spectral-indices/awesome-spectral-indices" class="gallery-item">
@@ -259,7 +304,143 @@
                         <p>On-Demand Earth System Data Cubes (ESDCs) in Python.</p>
                     </div>
                 </a>
+                <a href="https://github.com/ESDS-Leipzig/sen2nbar" class="gallery-item">
+                    <img src="sen2nbar.png" alt="sen2nbar">
+                    <div class="gallery-item-content">
+                        <h3>sen2nbar</h3>
+                        <p>Nadir BRDF Adjusted Reflectance (NBAR) for Sentinel-2 in Python.</p>
+                    </div>
+                </a>
+                <a href="https://github.com/davemlz/eemont" class="gallery-item">
+                    <img src="eemont.png" alt="eemont">
+                    <div class="gallery-item-content">
+                        <h3>eemont</h3>
+                        <p>A python package that extends Google Earth Engine.</p>
+                    </div>
+                </a>
             </div>
+        </section>
+
+        <section id="publications">
+            <h2>Publications</h2>
+	    <p class="paragraph">
+		Here you can find some of the papers I have published. For the full list please feel free to visit my <a href="https://scholar.google.com/citations?user=-wTpOdsAAAAJ&hl=es&oi=ao">Google Scholar</a> profile.
+	    </p>
+            <div>
+                <a href="https://doi.org/10.1016/j.dib.2024.110852" class="gallery-item">
+                    <div class="gallery-item-content">
+                        <h3>CloudSEN12+: The largest dataset of expert-labeled pixels for cloud and cloud shadow detection in Sentinel-2</h3>
+                        <p>Aybar, C., Bautista, L., <b>Montero, D.</b>, Contreras, J., Ayala, D., Prudencio, F., Loja, J., Ysuhuaylas, L., Herrera, F., Gonzales, K., Valladares, J., Flores, L. A., Mamani, E., Quiñonez, M., Fajardo, R., Espinoza, W., Limas, A., Yali, R., Alcántara, A., … Gómez-Chova, L. (2024). In Data in Brief (Vol. 56, p. 110852). Elsevier BV. https://doi.org/10.1016/j.dib.2024.110852</p>
+                    </div>
+                </a>
+                <a href="https://doi.org/10.48550/arXiv.2408.02348" class="gallery-item">
+                    <div class="gallery-item-content">
+                        <h3>Earth System Data Cubes: Avenues for advancing Earth system research</h3>
+                        <p><b>Montero, D.</b>, Kraemer, G., Anghelea, A., Aybar, C., Brandt, G., Camps-Valls, G., Cremer, F., Flik, I., Gans, F., Habershon, S., Ji, C., Kattenborn, T., Martínez-Ferrer, L., Martinuzzi, F., Reinhardt, M., Söchting, M., Teber, K., & Mahecha, M. D. (2024). arXiv. https://doi.org/10.48550/ARXIV.2408.02348</p>
+                    </div>
+                </a>
+                <a href="https://doi.org/10.1109/IGARSS53475.2024.10640715" class="gallery-item">
+                    <div class="gallery-item-content">
+                        <h3>Recurrent Neural Networks for Modelling Gross Primary Production</h3>
+                        <p><b>Montero, D.</b>, Mahecha, M. D., Martinuzzi, F., Aybar, C., Klosterhalfen, A., Knohl, A., Koebsch, F., Anaya, J., & Wieneke, S. (2024). In IGARSS 2024 - 2024 IEEE International Geoscience and Remote Sensing Symposium (pp. 4214–4217). IGARSS 2024 - 2024 IEEE International Geoscience and Remote Sensing Symposium. IEEE. https://doi.org/10.1109/igarss53475.2024.10640715</p>
+                    </div>
+                </a>
+                <a href="https://doi.org/10.1109/IGARSS53475.2024.10640742" class="gallery-item">
+                    <div class="gallery-item-content">
+                        <h3>On-Demand Earth System Data Cubes</h3>
+                        <p><b>Montero, D.</b>, Aybar, C., Ji, C., Kraemer, G., Söchting, M., Teber, K., & Mahecha, M. D. (2024). In IGARSS 2024 - 2024 IEEE International Geoscience and Remote Sensing Symposium (pp. 7529–7532). IGARSS 2024 - 2024 IEEE International Geoscience and Remote Sensing Symposium. IEEE. https://doi.org/10.1109/igarss53475.2024.10640742</p>
+                    </div>
+                </a>
+                <a href="https://doi.org/10.5194/isprs-archives-XLVIII-4-W12-2024-105-2024" class="gallery-item">
+                    <div class="gallery-item-content">
+                        <h3>Facilitating advanced Sentinel-2 analysis through a simplified computation of Nadir BRDF Adjusted Reflectance</h3>
+                        <p><b>Montero, D.</b>, Mahecha, M. D., Aybar, C., Mosig, C., & Wieneke, S. (2024). In The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences: Vol. XLVIII-4/W12-2024 (pp. 105–112). Copernicus GmbH. https://doi.org/10.5194/isprs-archives-xlviii-4-w12-2024-105-2024</p>
+                    </div>
+                </a>
+                <a href="https://doi.org/10.1109/MCG.2023.3321989" class="gallery-item">
+                    <div class="gallery-item-content">
+                        <h3>Lexcube: Interactive Visualization of Large Earth System Data Cubes</h3>
+                        <p>Söchting, M., Mahecha, M. D., <b>Montero, D.</b>, & Scheuermann, G. (2024). In IEEE Computer Graphics and Applications (Vol. 44, Issue 1, pp. 25–37). Institute of Electrical and Electronics Engineers (IEEE). https://doi.org/10.1109/mcg.2023.3321989</p>
+                    </div>
+                </a>
+                <a href="https://doi.org/10.1038/s41597-023-02096-0" class="gallery-item">
+                    <div class="gallery-item-content">
+                        <h3>A standardized catalogue of spectral indices to advance the use of remote sensing in Earth system research</h3>
+                        <p><b>Montero, D.</b>, Aybar, C., Mahecha, M. D., Martinuzzi, F., Söchting, M., & Wieneke, S. (2023). In Scientific Data (Vol. 10, Issue 1). Springer Science and Business Media LLC. https://doi.org/10.1038/s41597-023-02096-0</p>
+                    </div>
+                </a>
+                <a href="https://doi.org/10.5194/isprs-archives-XLVIII-4-W1-2022-301-2022" class="gallery-item">
+                    <div class="gallery-item-content">
+                        <h3>spectral: Awesome Spectral Indices deployed via the Google Earth Engine JavaScript API</h3>
+                        <p><b>Montero, D.</b>, Aybar, C., Mahecha, M. D., & Wieneke, S. (2022). In The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences: Vol. XLVIII-4/W1-2022 (pp. 301–306). Copernicus GmbH. https://doi.org/10.5194/isprs-archives-xlviii-4-w1-2022-301-2022</p>
+                    </div>
+                </a>
+                <a href="https://doi.org/10.1038/s41597-022-01878-2" class="gallery-item">
+                    <div class="gallery-item-content">
+                        <h3>CloudSEN12, a global dataset for semantic understanding of cloud and cloud shadow in Sentinel-2</h3>
+                        <p>Aybar, C., Ysuhuaylas, L., Loja, J., Gonzales, K., Herrera, F., Bautista, L., Yali, R., Flores, A., Diaz, L., Cuenca, N., Espinoza, W., Prudencio, F., Llactayo, V., <b>Montero, D.</b>, Sudmanns, M., Tiede, D., Mateo-García, G., & Gómez-Chova, L. (2022). In Scientific Data (Vol. 9, Issue 1). Springer Science and Business Media LLC. https://doi.org/10.1038/s41597-022-01878-2</p>
+                    </div>
+                </a>
+                <a href="https://doi.org/10.21105/joss.03168" class="gallery-item">
+                    <div class="gallery-item-content">
+                        <h3>eemont: A Python package that extends Google Earth Engine</h3>
+                        <p><b>Montero, D.</b> (2021). In Journal of Open Source Software (Vol. 6, Issue 62, p. 3168). The Open Journal. https://doi.org/10.21105/joss.03168</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section id="youtube">
+            <h2>YouTube</h2>
+	    <p class="paragraph">
+		Here you can find some workshops and talks as YouTube videos.
+	    </p>
+            <div class="youtube">
+                <div class="gallery-item">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/q5UghFQHSLA?si=gQTDd4I-x9cbyFHo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <div class="gallery-item-content">
+                        <h3>FOSS4GE 2024</h3>
+                        <p>Facilitating advanced Sentinel-2 analysis through a simplified computation of Nadir BRDF Adjusted Reflectance.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/96ASUMZFMxc?si=KQZTjKq7HLSA7sYX&amp;start=1470" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <div class="gallery-item-content">
+                        <h3>MasterGIS Days 2023</h3>
+                        <p>Procesamiento y visualización de datos geoespaciales con Google Earth Engine (Version 2023).</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/MU28078U14Y?si=_n-qZ3-kUXmQu1He&amp;start=1643" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <div class="gallery-item-content">
+                        <h3>MasterGIS Days 2021</h3>
+                        <p>Procesamiento y visualización de datos geoespaciales con Google Earth Engine (Version 2021).</p>
+                    </div>
+                </div>                 
+            </div>
+        </section>
+
+        <section id="links">
+		<h2>Links</h2>
+		<div id="affiliations" class="section">
+		  <div class="logo-container" style="display: flex; justify-content: space-around; align-items: center;">
+		    <a href="https://github.com/davemlz" target="_blank">
+		      <img src="github.png" alt="GitHub" style="height: 60px;">
+		    </a>
+		    <a href="https://x.com/dmlmont" target="_blank">
+		      <img src="x.png" alt="X" style="height: 60px;">
+		    </a>
+		    <a href="https://scholar.google.com/citations?user=-wTpOdsAAAAJ&hl=es&oi=ao" target="_blank">
+		      <img src="scholar.png" alt="Google Scholar" style="height: 60px;">
+		    </a>
+		    <a href="https://www.researchgate.net/profile/David-Loaiza-2" target="_blank">
+		      <img src="researchgate.png" alt="ResearchGate" style="height: 60px;">
+		    </a>
+		    <a href="https://www.linkedin.com/in/david-montero-loaiza/" target="_blank">
+		      <img src="linkedin.png" alt="LinkedIn" style="height: 60px;">
+		    </a>
+		  </div>
+		</div>
         </section>
     </div>
 
