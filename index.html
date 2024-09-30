@@ -9,7 +9,7 @@
         :root {
             --background-color: #ffffff;
             --text-color: #000000;
-            --accent-color: #ff33f9;
+            --accent-color: #ff66cc;
         }
         
         * {
@@ -226,7 +226,57 @@
                 justify-content: center;
             }
         }
-    </style>
+    
+        .name {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--text-color);
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .summary {
+            font-size: 1.6rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-out 0.5s;
+            animation-fill-mode: both;
+        }
+
+        .animate {
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-out 0.5s;
+            animation-fill-mode: both;
+        }
+
+        h2 {
+            font-size: 3.5rem;
+            color: var(--text-color);
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .gallery-item h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-align: left;
+        }
+
+        .gallery-item p {
+            font-size: 1rem;
+            text-align: left;
+        }
+
+        .paragraph {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .nav li a.active {
+            color: var(--accent-color);
+        }
+</style>
 </head>
 <body>
     <nav class="nav">
@@ -240,14 +290,18 @@
     </nav>
     
     <div class="container">
+        
         <section id="about">
             <div class="info">
                 <h1 class="name">David Montero Loaiza</h1>
                 <p class="summary">
                     Earth System Researcher and Open-Source Developer.<br>
-		    PhD Candidate at Leipzig University.<br>
-		    Google Developer Expert for Google Earth Engine.
+                    PhD Candidate at Leipzig University.<br>
+                    Google Developer Expert for Google Earth Engine.
                 </p>
+		<div class="animate">
+		    <a href="mailto:dml.mont@gmail.com" class="animate" style="background-color: var(--accent-color); color: #fff; padding: 0.8rem 1.5rem; border-radius: 5px; text-decoration: none; font-weight: 600;">Contact Me</a>
+		</div>                
             </div>
             <div class="image">
                 <img src="profile-pic.jpeg" alt="David Montero Loaiza" class="profile-pic">
@@ -465,5 +519,45 @@
             });
         });
     </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav a');
+            const sections = document.querySelectorAll('section');
+
+            window.addEventListener('scroll', function() {
+                let current = '';
+
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (scrollY >= sectionTop - 60) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').substring(1) === current) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 60,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+
 </body>
 </html>
