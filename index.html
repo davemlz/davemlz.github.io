@@ -3,561 +3,381 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>David Montero Loaiza</title>
-    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --background-color: #ffffff;
-            --text-color: #000000;
-            --accent-color: #ff66cc;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-	a {
-	    color: var(--accent-color);
-	}
-        
-        body {
-            font-family: 'Lexend', sans-serif;
-            background-color: var(--background-color);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-        
-        .nav {
-            background-color: var(--background-color);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        .nav ul {
-            display: flex;
-            justify-content: flex-end;
-            list-style-type: none;
-            padding: 1rem 2rem;
-        }
-        
-        .nav li {
-            margin-left: 2rem;
-        }
-        
-        .nav li a {
-            color: var(--text-color);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-        
-        .nav li a:hover {
-            color: var(--accent-color);
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-        
-        #about {
-            display: flex;
-            align-items: center;
-            min-height: 60vh;
-            padding: 4rem 0 1rem;
-        }
-        
-        .info {
-            flex: 2;
-            padding-right: 4rem;
-        }
-        
-        .name {
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--text-color);
-            margin-bottom: 1rem;
-            animation: fadeInUp 1s ease-out;
-        }
-        
-        .summary {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            animation: fadeInUp 1s ease-out 0.5s;
-            animation-fill-mode: both;
-        }
-
-	.paragraph {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-	    text-align: center;
-        }
-        
-        .image {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .profile-pic {
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            object-fit: cover;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-            animation: fadeInRight 1s ease-out;
-        }
-
-        #projects {
-            padding: 4rem 0;
-        }
-
-        #affiliations {
-            padding: 1rem 0 4rem;
-        }
-        
-        #links {
-            padding: 4rem 0;
-        }
-
-        #publications {
-            padding: 4rem 0;
-        }
-
-        #youtube {
-            padding: 4rem 0;
-        }
-        
-        h2 {
-            font-size: 3rem;
-            color: var(--text-color);
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-        
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-        
-        .gallery-item {
-            background-color: var(--background-color);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            text-decoration: none;
-            color: var(--text-color);
-        }
-        
-        .gallery-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-	    color: var(--accent-color);
-        }
-        
-        .gallery-item img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-        
-        .gallery-item-content {
-            padding: 1rem;
-        }
-        
-        .gallery-item h3 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-        
-        .gallery-item p {
-            font-size: 0.9rem;
-            
-        }
-
-        .youtube {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-            gap: 2rem;
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes fadeInRight {
-            from {
-                opacity: 0;
-                transform: translateX(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        @media (max-width: 768px) {
-            #about {
-                flex-direction: column;
-                text-align: center;
-            }
-            .info {
-                padding-right: 0;
-                margin-bottom: 2rem;
-            }
-            .nav ul {
-                justify-content: center;
-            }
-        }
-    
-        .name {
-            font-size: 3.5rem;
-            font-weight: 700;
-            color: var(--text-color);
-            margin-bottom: 1rem;
-            animation: fadeInUp 1s ease-out;
-        }
-
-        .summary {
-            font-size: 1.6rem;
-            margin-bottom: 2rem;
-            animation: fadeInUp 1s ease-out 0.5s;
-            animation-fill-mode: both;
-        }
-
-        .animate {
-            margin-bottom: 2rem;
-            animation: fadeInUp 1s ease-out 0.5s;
-            animation-fill-mode: both;
-        }
-
-        h2 {
-            font-size: 3.5rem;
-            color: var(--text-color);
-            margin-bottom: 2rem;
-            text-align: left;
-        }
-
-        .gallery-item h3 {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            text-align: left;
-        }
-
-        .gallery-item p {
-            font-size: 1rem;
-            text-align: left;
-        }
-
-        .paragraph {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            text-align: left;
-        }
-
-        .nav li a.active {
-            color: var(--accent-color);
-        }
-</style>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>David Montero Loaiza - Personal Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav class="nav">
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#publications">Publications</a></li>
-            <li><a href="#youtube">YouTube</a></li>
-            <li><a href="#links">Links</a></li>
-        </ul>
-    </nav>
-    
+
+<!-- Navbar Section -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
-        
-        <section id="about">
-            <div class="info">
-                <h1 class="name">David Montero Loaiza</h1>
-                <p class="summary">
-                    Earth System Researcher and Open-Source Developer.<br>
-                    PhD Candidate at Leipzig University.<br>
-                    Google Developer Expert for Google Earth Engine.
-                </p>
-		<div class="animate">
-		    <a href="mailto:dml.mont@gmail.com" class="animate" style="background-color: var(--accent-color); color: #fff; padding: 0.8rem 1.5rem; border-radius: 5px; text-decoration: none; font-weight: 600;">Contact Me</a>
-		</div>                
-            </div>
-            <div class="image">
-                <img src="profile-pic.jpeg" alt="David Montero Loaiza" class="profile-pic">
-            </div>
-        </section>
-
-        <section id="affiliations">
-		<div id="affiliations" class="summary">
-		  <div class="logo-container" style="display: flex; justify-content: space-around; align-items: center;">
-		    <a href="https://www.uni-leipzig.de/personenprofil/mitarbeiter/david-montero" target="_blank">
-		      <img src="unileipzig.png" alt="Leipzig University" style="height: 60px;">
-		    </a>
-		    <a href="https://www.idiv.de/en/profile/1994.html" target="_blank">
-		      <img src="idiv.png" alt="iDiv" style="height: 60px;">
-		    </a>
-		    <a href="https://developers.google.com/profile/u/dmlmont?hl=es-419" target="_blank">
-		      <img src="gde.png" alt="Google Developer Expert" style="height: 60px;">
-		    </a>
-		  </div>
-		</div>
-        </section>
-        
-        <section id="projects">
-            <h2>Open Source Projects</h2>
-	    <p class="paragraph">
-		Here you can find some of the open source projects I have developed. For the full list please feel free to visit my <a href="https://github.com/davemlz">GitHub</a> profile.
-	    </p>
-            <div class="gallery">
-                <a href="https://github.com/awesome-spectral-indices/awesome-spectral-indices" class="gallery-item">
-                    <img src="asi.png" alt="ASI">
-                    <div class="gallery-item-content">
-                        <h3>Awesome Spectral Indices</h3>
-                        <p>A ready-to-use curated list of Spectral Indices for Remote Sensing applications.</p>
-                    </div>
-                </a>
-                <a href="https://github.com/awesome-spectral-indices/spectral" class="gallery-item">
-                    <img src="spectral.png" alt="spectral">
-                    <div class="gallery-item-content">
-                        <h3>spectral</h3>
-                        <p>Awesome Spectral Indices for the Google Earth Engine JavaScript API (Code Editor).</p>
-                    </div>
-                </a>
-                <a href="https://github.com/awesome-spectral-indices/spyndex" class="gallery-item">
-                    <img src="spyndex.png" alt="spyndex">
-                    <div class="gallery-item-content">
-                        <h3>spyndex</h3>
-                        <p>Awesome Spectral Indices in Python.</p>
-                    </div>
-                </a>
-                <a href="https://github.com/ESDS-Leipzig/cubo" class="gallery-item">
-                    <img src="cubo.png" alt="cubo">
-                    <div class="gallery-item-content">
-                        <h3>cubo</h3>
-                        <p>On-Demand Earth System Data Cubes (ESDCs) in Python.</p>
-                    </div>
-                </a>
-                <a href="https://github.com/ESDS-Leipzig/sen2nbar" class="gallery-item">
-                    <img src="sen2nbar.png" alt="sen2nbar">
-                    <div class="gallery-item-content">
-                        <h3>sen2nbar</h3>
-                        <p>Nadir BRDF Adjusted Reflectance (NBAR) for Sentinel-2 in Python.</p>
-                    </div>
-                </a>
-                <a href="https://github.com/davemlz/eemont" class="gallery-item">
-                    <img src="eemont.png" alt="eemont">
-                    <div class="gallery-item-content">
-                        <h3>eemont</h3>
-                        <p>A python package that extends Google Earth Engine.</p>
-                    </div>
-                </a>
-            </div>
-        </section>
-
-        <section id="publications">
-            <h2>Publications</h2>
-	    <p class="paragraph">
-		Here you can find some of the papers I have published. For the full list please feel free to visit my <a href="https://scholar.google.com/citations?user=-wTpOdsAAAAJ&hl=es&oi=ao">Google Scholar</a> profile.
-	    </p>
-            <div>
-                <a href="https://doi.org/10.1016/j.dib.2024.110852" class="gallery-item">
-                    <div class="gallery-item-content">
-                        <h3>CloudSEN12+: The largest dataset of expert-labeled pixels for cloud and cloud shadow detection in Sentinel-2</h3>
-                        <p>Aybar, C., Bautista, L., <b>Montero, D.</b>, Contreras, J., Ayala, D., Prudencio, F., Loja, J., Ysuhuaylas, L., Herrera, F., Gonzales, K., Valladares, J., Flores, L. A., Mamani, E., Quiñonez, M., Fajardo, R., Espinoza, W., Limas, A., Yali, R., Alcántara, A., … Gómez-Chova, L. (2024). In Data in Brief (Vol. 56, p. 110852). Elsevier BV. https://doi.org/10.1016/j.dib.2024.110852</p>
-                    </div>
-                </a>
-                <a href="https://doi.org/10.48550/arXiv.2408.02348" class="gallery-item">
-                    <div class="gallery-item-content">
-                        <h3>Earth System Data Cubes: Avenues for advancing Earth system research</h3>
-                        <p><b>Montero, D.</b>, Kraemer, G., Anghelea, A., Aybar, C., Brandt, G., Camps-Valls, G., Cremer, F., Flik, I., Gans, F., Habershon, S., Ji, C., Kattenborn, T., Martínez-Ferrer, L., Martinuzzi, F., Reinhardt, M., Söchting, M., Teber, K., & Mahecha, M. D. (2024). arXiv. https://doi.org/10.48550/ARXIV.2408.02348</p>
-                    </div>
-                </a>
-                <a href="https://doi.org/10.1109/IGARSS53475.2024.10640715" class="gallery-item">
-                    <div class="gallery-item-content">
-                        <h3>Recurrent Neural Networks for Modelling Gross Primary Production</h3>
-                        <p><b>Montero, D.</b>, Mahecha, M. D., Martinuzzi, F., Aybar, C., Klosterhalfen, A., Knohl, A., Koebsch, F., Anaya, J., & Wieneke, S. (2024). In IGARSS 2024 - 2024 IEEE International Geoscience and Remote Sensing Symposium (pp. 4214–4217). IGARSS 2024 - 2024 IEEE International Geoscience and Remote Sensing Symposium. IEEE. https://doi.org/10.1109/igarss53475.2024.10640715</p>
-                    </div>
-                </a>
-                <a href="https://doi.org/10.1109/IGARSS53475.2024.10640742" class="gallery-item">
-                    <div class="gallery-item-content">
-                        <h3>On-Demand Earth System Data Cubes</h3>
-                        <p><b>Montero, D.</b>, Aybar, C., Ji, C., Kraemer, G., Söchting, M., Teber, K., & Mahecha, M. D. (2024). In IGARSS 2024 - 2024 IEEE International Geoscience and Remote Sensing Symposium (pp. 7529–7532). IGARSS 2024 - 2024 IEEE International Geoscience and Remote Sensing Symposium. IEEE. https://doi.org/10.1109/igarss53475.2024.10640742</p>
-                    </div>
-                </a>
-                <a href="https://doi.org/10.5194/isprs-archives-XLVIII-4-W12-2024-105-2024" class="gallery-item">
-                    <div class="gallery-item-content">
-                        <h3>Facilitating advanced Sentinel-2 analysis through a simplified computation of Nadir BRDF Adjusted Reflectance</h3>
-                        <p><b>Montero, D.</b>, Mahecha, M. D., Aybar, C., Mosig, C., & Wieneke, S. (2024). In The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences: Vol. XLVIII-4/W12-2024 (pp. 105–112). Copernicus GmbH. https://doi.org/10.5194/isprs-archives-xlviii-4-w12-2024-105-2024</p>
-                    </div>
-                </a>
-                <a href="https://doi.org/10.1109/MCG.2023.3321989" class="gallery-item">
-                    <div class="gallery-item-content">
-                        <h3>Lexcube: Interactive Visualization of Large Earth System Data Cubes</h3>
-                        <p>Söchting, M., Mahecha, M. D., <b>Montero, D.</b>, & Scheuermann, G. (2024). In IEEE Computer Graphics and Applications (Vol. 44, Issue 1, pp. 25–37). Institute of Electrical and Electronics Engineers (IEEE). https://doi.org/10.1109/mcg.2023.3321989</p>
-                    </div>
-                </a>
-                <a href="https://doi.org/10.1038/s41597-023-02096-0" class="gallery-item">
-                    <div class="gallery-item-content">
-                        <h3>A standardized catalogue of spectral indices to advance the use of remote sensing in Earth system research</h3>
-                        <p><b>Montero, D.</b>, Aybar, C., Mahecha, M. D., Martinuzzi, F., Söchting, M., & Wieneke, S. (2023). In Scientific Data (Vol. 10, Issue 1). Springer Science and Business Media LLC. https://doi.org/10.1038/s41597-023-02096-0</p>
-                    </div>
-                </a>
-                <a href="https://doi.org/10.5194/isprs-archives-XLVIII-4-W1-2022-301-2022" class="gallery-item">
-                    <div class="gallery-item-content">
-                        <h3>spectral: Awesome Spectral Indices deployed via the Google Earth Engine JavaScript API</h3>
-                        <p><b>Montero, D.</b>, Aybar, C., Mahecha, M. D., & Wieneke, S. (2022). In The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences: Vol. XLVIII-4/W1-2022 (pp. 301–306). Copernicus GmbH. https://doi.org/10.5194/isprs-archives-xlviii-4-w1-2022-301-2022</p>
-                    </div>
-                </a>
-                <a href="https://doi.org/10.1038/s41597-022-01878-2" class="gallery-item">
-                    <div class="gallery-item-content">
-                        <h3>CloudSEN12, a global dataset for semantic understanding of cloud and cloud shadow in Sentinel-2</h3>
-                        <p>Aybar, C., Ysuhuaylas, L., Loja, J., Gonzales, K., Herrera, F., Bautista, L., Yali, R., Flores, A., Diaz, L., Cuenca, N., Espinoza, W., Prudencio, F., Llactayo, V., <b>Montero, D.</b>, Sudmanns, M., Tiede, D., Mateo-García, G., & Gómez-Chova, L. (2022). In Scientific Data (Vol. 9, Issue 1). Springer Science and Business Media LLC. https://doi.org/10.1038/s41597-022-01878-2</p>
-                    </div>
-                </a>
-                <a href="https://doi.org/10.21105/joss.03168" class="gallery-item">
-                    <div class="gallery-item-content">
-                        <h3>eemont: A Python package that extends Google Earth Engine</h3>
-                        <p><b>Montero, D.</b> (2021). In Journal of Open Source Software (Vol. 6, Issue 62, p. 3168). The Open Journal. https://doi.org/10.21105/joss.03168</p>
-                    </div>
-                </a>
-            </div>
-        </section>
-
-        <section id="youtube">
-            <h2>YouTube</h2>
-	    <p class="paragraph">
-		Here you can find some workshops and talks as YouTube videos.
-	    </p>
-            <div class="youtube">
-                <div class="gallery-item">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/q5UghFQHSLA?si=gQTDd4I-x9cbyFHo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    <div class="gallery-item-content">
-                        <h3>FOSS4GE 2024</h3>
-                        <p>Facilitating advanced Sentinel-2 analysis through a simplified computation of Nadir BRDF Adjusted Reflectance.</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/96ASUMZFMxc?si=KQZTjKq7HLSA7sYX&amp;start=1470" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    <div class="gallery-item-content">
-                        <h3>MasterGIS Days 2023</h3>
-                        <p>Procesamiento y visualización de datos geoespaciales con Google Earth Engine (Version 2023).</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/MU28078U14Y?si=_n-qZ3-kUXmQu1He&amp;start=1643" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    <div class="gallery-item-content">
-                        <h3>MasterGIS Days 2021</h3>
-                        <p>Procesamiento y visualización de datos geoespaciales con Google Earth Engine (Version 2021).</p>
-                    </div>
-                </div>                 
-            </div>
-        </section>
-
-        <section id="links">
-		<h2>Links</h2>
-		<div id="affiliations" class="section">
-		  <div class="logo-container" style="display: flex; justify-content: space-around; align-items: center;">
-		    <a href="https://github.com/davemlz" target="_blank">
-		      <img src="github.png" alt="GitHub" style="height: 60px;">
-		    </a>
-		    <a href="https://x.com/dmlmont" target="_blank">
-		      <img src="x.png" alt="X" style="height: 60px;">
-		    </a>
-		    <a href="https://scholar.google.com/citations?user=-wTpOdsAAAAJ&hl=es&oi=ao" target="_blank">
-		      <img src="scholar.png" alt="Google Scholar" style="height: 60px;">
-		    </a>
-		    <a href="https://www.researchgate.net/profile/David-Loaiza-2" target="_blank">
-		      <img src="researchgate.png" alt="ResearchGate" style="height: 60px;">
-		    </a>
-		    <a href="https://www.linkedin.com/in/david-montero-loaiza/" target="_blank">
-		      <img src="linkedin.png" alt="LinkedIn" style="height: 60px;">
-		    </a>
-		  </div>
-		</div>
-        </section>
+        <a class="navbar-brand" href="#">David Montero Loaiza</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
+                <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                <li class="nav-item"><a class="nav-link" href="#publications">Publications</a></li>
+                <li class="nav-item"><a class="nav-link" href="#media">Media</a></li>
+                <li class="nav-item"><a class="nav-link" href="#links">Links</a></li>
+            </ul>
+        </div>
     </div>
+</nav>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const navLinks = document.querySelectorAll('.nav a');
-            
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    const targetId = this.getAttribute('href').substring(1);
-                    const targetElement = document.getElementById(targetId);
-                    
-                    if (targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 60,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
-        });
-    </script>
+<!-- Hero Section -->
+<section class="hero text-center">
+    <div class="overlay"></div>
+    <div class="container">
+        <h1 class="display-4">David Montero Loaiza</h1>
+        <p class="lead">PhD Candidate | Earth System Science Researcher | Google Developer Expert</p>
+    </div>
+</section>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const navLinks = document.querySelectorAll('.nav a');
-            const sections = document.querySelectorAll('section');
+<!-- About Me Section -->
+<section id="about" class="py-5">
+    <div class="container">
+        <h2>About Me</h2>
+        <p class="text-muted">
+            I'm <b>David Montero Loaiza</b>, a PhD Candidate in Physics and Earth System Science at <b>Leipzig University</b>, Germany.
+            I am also a researcher at the <b>German Centre for Integrative Biodiversity Research (iDiv)</b>.
+            My research focuses on <b>Remote Sensing of Vegetation</b>, with a particular emphasis on the effects of <b>climate extremes on 
+            the terrestrial biosphere and land-atmosphere interactions</b>.<br><br>
 
-            window.addEventListener('scroll', function() {
-                let current = '';
+            I am dedicated to contributing to the Free and Open Source Software (FOSS) community, 
+            particularly in geospatial applications. I've developed several impactful open-source projects, 
+            including <b>Awesome Spectral Indices</b>, <b>cubo</b>, and <b>eemont</b>, which have been widely used and recognized in the field.<br><br>
 
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    if (scrollY >= sectionTop - 60) {
-                        current = section.getAttribute('id');
-                    }
-                });
+            Additionally, I am a <b>Google Developer Expert</b> for <b>Google Earth Engine</b>, where I create open-source 
+            solutions for both the Python and JavaScript APIs.
+        </p>
+    </div>
+</section>
 
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href').substring(1) === current) {
-                        link.classList.add('active');
-                    }
-                });
-            });
+<!-- Projects Section -->
+<section id="projects" class="py-5 bg-light">
+    <div class="container">
+        <h2>Open-Source Projects</h2>
+        <div class="row">
+            <!-- Awesome Spectral Indices -->
+            <div class="col-md-4">                
+                <div class="card mb-4 shadow-sm">
+                    <a href="https://github.com/awesome-spectral-indices/awesome-spectral-indices">
+                        <img src="asi.png" alt="Awesome Spectral Indices" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Awesome Spectral Indices</h5>
+                            <p class="card-text">A ready-to-use curated list of Spectral Indices for Remote Sensing applications.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!-- spectral -->
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <a href="https://github.com/awesome-spectral-indices/spectral">
+                        <img src="spectral.png" alt="spectral" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">spectral</h5>
+                            <p class="card-text">Awesome Spectral Indices for the Google Earth Engine JavaScript API (Code Editor).</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!-- spyndex -->
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <a href="https://github.com/awesome-spectral-indices/spyndex">
+                        <img src="spyndex.png" alt="spyndex" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">spyndex</h5>
+                            <p class="card-text">Awesome Spectral Indices in Python.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!-- cubo -->
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <a href="https://github.com/ESDS-Leipzig/cubo">
+                        <img src="cubo.png" alt="cubo" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">cubo</h5>
+                            <p class="card-text">On-Demand Earth System Data Cubes (ESDCs) in Python.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!-- sen2nbar -->
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <a href="https://github.com/ESDS-Leipzig/sen2nbar">
+                        <img src="sen2nbar.png" alt="sen2nbar" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">sen2nbar</h5>
+                            <p class="card-text">Nadir BRDF Adjusted Reflectance (NBAR) for Sentinel-2 in Python.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!-- eemont -->
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <a href="https://github.com/davemlz/eemont">
+                        <img src="eemont.png" alt="eemont" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">eemont</h5>
+                            <p class="card-text">A python package that extends Google Earth Engine.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!-- Repeat for more projects -->
+        </div>
+    </div>
+</section>
 
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href').substring(1);
-                    const targetElement = document.getElementById(targetId);
-                    if (targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 60,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
-        });
-    </script>
+<!-- Publications Section -->
+<section id="publications" class="py-5"></section>
+    <div class="container">
+        <h2>Publications</h2>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item d-flex align-items-center">
+                <img src="cloudsen12+.png" alt="CloudSEN12+" class="publication-img me-3">
+                <div>
+                    <a href="https://doi.org/10.1016/j.dib.2024.110852">
+                        <h4>CloudSEN12+: The largest dataset of expert-labeled pixels for cloud and cloud shadow detection in Sentinel-2</h4>
+                        <p>Aybar, C., Bautista, L., <b>Montero, D.</b>, Contreras, J., Ayala, D., Prudencio, F., Loja, J., Ysuhuaylas, L., Herrera, F., Gonzales, K., Valladares, J., Flores, L. A., Mamani, E., Quiñonez, M., Fajardo, R., Espinoza, W., Limas, A., Yali, R., Alcántara, A., … Gómez-Chova, L. (2024). In Data in Brief (Vol. 56, p. 110852). Elsevier BV. https://doi.org/10.1016/j.dib.2024.110852</p>
+                    </a>
+                </div>
+            </li>
+            <li class="list-group-item d-flex align-items-center">
+                <img src="avenues.png" alt="Earth System Data Cubes" class="publication-img me-3">
+                <div>
+                    <a href="https://doi.org/10.48550/arXiv.2408.02348">
+                        <h4>Earth System Data Cubes: Avenues for advancing Earth system research</h4>
+                        <p><b>Montero, D.</b>, Kraemer, G., Anghelea, A., Aybar, C., Brandt, G., Camps-Valls, G., Cremer, F., Flik, I., Gans, F., Habershon, S., Ji, C., Kattenborn, T., Martínez-Ferrer, L., Martinuzzi, F., Reinhardt, M., Söchting, M., Teber, K., & Mahecha, M. D. (2024). arXiv. https://doi.org/10.48550/ARXIV.2408.02348</p>
+                    </a>
+                </div>
+            </li>
+            <li class="list-group-item d-flex align-items-center">
+                <img src="ji2024deepextremecubes.png" alt="DeepExtremeCubes" class="publication-img me-3">
+                <div>
+                    <a href="https://doi.org/10.48550/arXiv.2406.18179">
+                        <h4>DeepExtremeCubes: Integrating Earth system spatio-temporal data for impact assessment of climate extremes</h4>
+                        <p>Ji, C., Fincke, T., Benson, V., Camps-Valls, G., Fernandez-Torres, M.-A., Gans, F., Kraemer, G., Martinuzzi, F., <b>Montero, D.</b>, Mora, K., Pellicer-Valero, O. J., Robin, C., Soechting, M., Weynants, M., & Mahecha, M. D. (2024). arXiv. https://doi.org/10.48550/ARXIV.2406.18179</p>
+                    </a>
+                </div>
+            </li>
+            <li class="list-group-item d-flex align-items-center">
+                <img src="rnns4gpp.png" alt="Recurrent Neural Networks for Modelling Gross Primary Production" class="publication-img me-3">
+                <div>
+                    <a href="https://doi.org/10.1109/IGARSS53475.2024.10640715">
+                        <h4>Recurrent Neural Networks for Modelling Gross Primary Production</h4>
+                        <p><b>Montero, D.</b>, Mahecha, M. D., Martinuzzi, F., Aybar, C., Klosterhalfen, A., Knohl, A., Koebsch, F., Anaya, J., & Wieneke, S. (2024). In IGARSS 2024 - 2024 IEEE International Geoscience and Remote Sensing Symposium (pp. 4214–4217). IEEE. https://doi.org/10.1109/igarss53475.2024.10640715</p>
+                    </a>
+                </div>
+            </li>
+            <li class="list-group-item d-flex align-items-center">
+                <img src="ondemand.png" alt="On-Demand Earth System Data Cubes" class="publication-img me-3">
+                <div>
+                    <a href="https://doi.org/10.1109/IGARSS53475.2024.10640742">
+                        <h4>On-Demand Earth System Data Cubes</h4>
+                        <p><b>Montero, D.</b>, Aybar, C., Ji, C., Kraemer, G., Söchting, M., Teber, K., & Mahecha, M. D. (2024). In IGARSS 2024 - 2024 IEEE International Geoscience and Remote Sensing Symposium (pp. 7529-7532). IEEE. https://doi.org/10.1109/igarss53475.2024.10640742</p>
+                    </a>
+                </div>
+            </li>
+            <li class="list-group-item d-flex align-items-center">
+                <img src="facilitating.png" alt="Facilitating advanced Sentinel-2 analysis" class="publication-img me-3">
+                <div>
+                    <a href="https://doi.org/10.5194/isprs-archives-XLVIII-4-W12-2024-105-2024">
+                        <h4>Facilitating advanced Sentinel-2 analysis through a simplified computation of Nadir BRDF Adjusted Reflectance</h4>
+                        <p><b>Montero, D.</b>, Mahecha, M. D., Aybar, C., Mosig, C., & Wieneke, S. (2024). In The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences: Vol. XLVIII-4/W12-2024 (pp. 105-112). Copernicus GmbH. https://doi.org/10.5194/isprs-archives-xlviii-4-w12-2024-105-2024</p>
+                    </a>
+                </div>
+            </li>
+            <li class="list-group-item d-flex align-items-center">
+                <img src="martinuzzi2024spectralindicesjl.png" alt="SpectralIndices.jl" class="publication-img me-3">
+                <div>
+                    <a href="https://doi.org/10.5194/isprs-archives-XLVIII-4-W12-2024-89-2024">
+                        <h4>SpectralIndices.jl: Streamlining spectral indices access and computation for Earth system research</h4>
+                        <p>Martinuzzi, F., Mahecha, M. D., <b>Montero, D.</b>, Alonso, L., & Mora, K. (2024). In The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences: Vol. XLVIII-4/W12-2024 (pp. 89-95). Copernicus GmbH. https://doi.org/10.5194/isprs-archives-xlviii-4-w12-2024-89-2024</p>
+                    </a>
+                </div>
+            </li>
+            <li class="list-group-item d-flex align-items-center">
+                <img src="aybar2024benchmark.png" alt="Facilitating advanced Sentinel-2 analysis" class="publication-img me-3">
+                <div>
+                    <a href="https://doi.org/10.1109/LGRS.2024.3401394">
+                        <h4>A Comprehensive Benchmark for Optical Remote Sensing Image Super-Resolution</h4>
+                        <p>Aybar, C., <b>Montero, D.</b>, Donike, S., Kalaitzis, F., & Gómez-Chova, L. (2024). In IEEE Geoscience and Remote Sensing Letters (Vol. 21, pp. 1–5). Institute of Electrical and Electronics Engineers (IEEE). https://doi.org/10.1109/lgrs.2024.3401394</p>
+                    </a>
+                </div>
+            </li>
+            <li class="list-group-item d-flex align-items-center">
+                <img src="lexcube.png" alt="Lexcube" class="publication-img me-3">
+                <div>
+                    <a href="https://doi.org/10.1109/MCG.2023.3321989">
+                        <h4>Lexcube: Interactive Visualization of Large Earth System Data Cubes</h4>
+                        <p>Söchting, M., Mahecha, M. D., <b>Montero, D.</b>, & Scheuermann, G. (2024). In IEEE Computer Graphics and Applications (Vol. 44, Issue 1, pp. 25–37). IEEE. https://doi.org/10.1109/mcg.2023.3321989</p>
+                    </a>
+                </div>
+            </li>
+            <li class="list-group-item d-flex align-items-center">
+                <img src="aybar2023lessons.png" alt="Lessons" class="publication-img me-3">
+                <div>
+                    <a href="https://doi.org/10.1109/igarss52108.2023.10282381">
+                        <h4>Lessons Learned From CloudSEN12 Dataset: Identifying Incorrect Annotations in Cloud Semantic Segmentation Datasets.</h4>
+                        <p>Aybar, C., <b>Montero, D.</b>, Mateo-García, G., & Gómez-Chova, L. (2023). In IGARSS 2023 - 2023 IEEE International Geoscience and Remote Sensing Symposium (pp. 892-895). IGARSS 2023 - 2023 IEEE International Geoscience and Remote Sensing Symposium. IEEE. https://doi.org/10.1109/igarss52108.2023.10282381</p>
+                    </a>
+                </div>
+            </li>
+            <li class="list-group-item d-flex align-items-center">
+                <img src="martinuzzi2024extreme.png" alt="Extreme" class="publication-img me-3">
+                <div>
+                    <a href="https://doi.org/10.5194/egusphere-2023-2368">
+                        <h4>Learning Extreme Vegetation Response to Climate Forcing: A Comparison of Recurrent Neural Network Architectures.</h4>
+                        <p>Martinuzzi, F., Mahecha, M. D., Camps-Valls, G., <b>Montero, D.</b>, Williams, T., & Mora, K. (2023). Copernicus GmbH. https://doi.org/10.5194/egusphere-2023-2368</p>
+                    </a>
+                </div>
+            </li>
+            <li class="list-group-item d-flex align-items-center">
+                <img src="standardized.png" alt="A standardized catalogue of spectral indices" class="publication-img me-3">
+                <div>
+                    <a href="https://doi.org/10.1038/s41597-023-02096-0">
+                        <h4>A standardized catalogue of spectral indices to advance the use of remote sensing in Earth system research</h4>
+                        <p><b>Montero, D.</b>, Aybar, C., Mahecha, M. D., Martinuzzi, F., Söchting, M., & Wieneke, S. (2023). In Scientific Data (Vol. 10, Issue 1). Springer Science and Business Media LLC. https://doi.org/10.1038/s41597-023-02096-0</p>
+                    </a>
+                </div>
+            </li>
+            <li class="list-group-item d-flex align-items-center">
+                <img src="deployed.png" alt="Spectral" class="publication-img me-3">
+                <div>
+                    <a href="https://doi.org/10.5194/isprs-archives-XLVIII-4-W1-2022-301-2022">
+                        <h4>spectral: Awesome Spectral Indices deployed via the Google Earth Engine JavaScript API</h4>
+                        <p><b>Montero, D.</b>, Aybar, C., Mahecha, M. D., & Wieneke, S. (2022). In The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences: Vol. XLVIII-4/W1-2022 (pp. 301–306). Copernicus GmbH. https://doi.org/10.5194/isprs-archives-xlviii-4-w1-2022-301-2022</p>
+                    </a>
+                </div>
+            </li>
+            <li class="list-group-item d-flex align-items-center">
+                <img src="cloudsen12.png" alt="CloudSEN12" class="publication-img me-3">
+                <div>
+                    <a href="https://doi.org/10.1038/s41597-022-01878-2">
+                        <h4>CloudSEN12, a global dataset for semantic understanding of cloud and cloud shadow in Sentinel-2</h4>
+                        <p>Aybar, C., Ysuhuaylas, L., Loja, J., Gonzales, K., Herrera, F., Bautista, L., Yali, R., Flores, A., Diaz, L., Cuenca, N., Espinoza, W., Prudencio, F., Llactayo, V., <b>Montero, D.</b>, Sudmanns, M., Tiede, D., Mateo-García, G., & Gómez-Chova, L. (2022). In Scientific Data (Vol. 9, Issue 1). Springer Science and Business Media LLC. https://doi.org/10.1038/s41597-022-01878-2</p>
+                    </a>
+                </div>
+            </li>
+            <li class="list-group-item d-flex align-items-center">
+                <img src="montero2021eemont.png" alt="Eemont" class="publication-img me-3">
+                <div>
+                    <a href="https://doi.org/10.21105/joss.03168">
+                        <h4>eemont: A Python package that extends Google Earth Engine</h4>
+                        <p><b>Montero, D.</b> (2021). In Journal of Open Source Software (Vol. 6, Issue 62, p. 3168). The Open Journal. https://doi.org/10.21105/joss.03168</p>
+                    </a>
+                </div>
+            </li>
+            <li class="list-group-item d-flex align-items-center">
+                <img src="montero2018combination.png" alt="Combination of satellite imagery" class="publication-img me-3">
+                <div>
+                    <a href="https://doi.org/10.4995/raet.2018.7688">
+                        <h4>Combination of satellite imagery with meteorological data for estimating reference evapotranspiration</h4>
+                        <p><b>Montero, D.</b>, Echeverry, F., & Hernández, F. (2018). In Revista de Teledetección (Issue 51, p. 75). Universitat Politecnica de Valencia. https://doi.org/10.4995/raet.2018.7688</p>
+                    </a>
+                </div>
+            </li>
+            <li class="list-group-item d-flex align-items-center">
+                <img src="valencia2017enso.png" alt="Vegetation Anomalies" class="publication-img me-3">
+                <div>
+                    <a href="https://doi.org/10.4995/raet.2017.7715">
+                        <h4>Vegetation anomalies associated with the ENSO phenomenon in the Cauca river valley, Colombia</h4>
+                        <p>Valencia, J. M., García, C. E., & <b>Montero, D.</b> (2017). In Revista de Teledetección (Issue 50, p. 89). Universitat Politecnica de Valencia. https://doi.org/10.4995/raet.2017.7715</p>
+                    </a>
+                </div>
+            </li>
+            <li class="list-group-item d-flex align-items-center">
+                <img src="garcia2017nircamera.png" alt="Evaluation of a NIR camera" class="publication-img me-3">
+                <div>
+                    <a href="https://doi.org/10.15446/agron.colomb.v35n1.60852">
+                        <h4>Evaluation of a NIR camera for monitoring yield and nitrogen effect in sugarcane</h4>
+                        <p>García, C. E., <b>Montero, D.</b>, & Chica, H. A. (2017). In Agronomía Colombiana (Vol. 35, Issue 1, pp. 82-91). Universidad Nacional de Colombia. https://doi.org/10.15446/agron.colomb.v35n1.60852</p>
+                    </a>
+                </div>
+            </li>
+        </ul>        
+    </div>
+</section>
 
+<!-- Media Section (YouTube Videos) -->
+<section id="media" class="py-5 bg-light">
+    <div class="container">
+        <h2>Media</h2>
+        <div class="row">
+            <!-- FOSS4GE 2024 -->
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe width="100%" height="200" class="embed-responsive-item" src="https://www.youtube.com/embed/q5UghFQHSLA?si=gQTDd4I-x9cbyFHo" allowfullscreen></iframe>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">FOSS4GE 2024</h5>
+                        <p class="card-text">Facilitating advanced Sentinel-2 analysis through a simplified computation of Nadir BRDF Adjusted Reflectance.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- MasterGISDays 2023 -->
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe width="100%" height="200" class="embed-responsive-item" src="https://www.youtube.com/embed/96ASUMZFMxc?si=KQZTjKq7HLSA7sYX&amp;start=1470" allowfullscreen></iframe>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">MasterGIS Days 2023</h5>
+                        <p class="card-text">Procesamiento y visualización de datos geoespaciales con Google Earth Engine (Version 2023).</p>
+                    </div>
+                </div>
+            </div>
+            <!-- MasterGISDays 2021 -->
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe width="100%" height="200" class="embed-responsive-item" src="https://www.youtube.com/embed/MU28078U14Y?si=_n-qZ3-kUXmQu1He&amp;start=1643" allowfullscreen></iframe>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">MasterGIS Days 2021</h5>
+                        <p class="card-text">Procesamiento y visualización de datos geoespaciales con Google Earth Engine (Version 2021).</p>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+</section>
+
+<!-- Links Section -->
+<section id="links" class="py-5">
+    <div class="container">
+        <h2>Links</h2>
+        <ul>
+            <li><a href="https://github.com/davemlz" target="_blank">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/david-montero-loaiza/" target="_blank">LinkedIn</a></li>
+            <li><a href="https://x.com/dmlmont" target="_blank">x (Twitter)</a></li>
+            <li><a href="https://scholar.google.com/citations?user=-wTpOdsAAAAJ&hl=es&oi=ao" target="_blank">Google Scholar</a></li>
+        </ul>
+    </div>
+</section>
+
+<!-- Footer Section -->
+<footer class="py-4 bg-dark text-light text-center">
+    <div class="container">
+        <p>© 2024 David Montero Loaiza. All rights reserved.</p>
+    </div>
+</footer>
+
+<!-- Bootstrap JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
