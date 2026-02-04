@@ -91,16 +91,14 @@ section {
 
 /* General link styles */
 a {
-    color: #0d6efd;
-    text-decoration: underline;
+    color: inherit; /* Inherit the color from parent elements, making it blend with the card text */
+    text-decoration: none; /* Remove the underline */
 }
 
 a:hover {
-    color: #0a58ca;
-}
-
-.navbar .nav-link {
-    text-decoration: none;
+    color: rgba(0, 0, 0, 0.7); /* Slightly darken the color on hover */
+    text-decoration: none; /* Ensure underline stays removed on hover */
+    transition: color 0.3s ease; /* Smooth transition for the color change */
 }
 
 /* Footer */
