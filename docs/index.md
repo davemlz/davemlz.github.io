@@ -5,7 +5,7 @@ layout: home
 hero:
   name: "David Montero Loaiza"
   text: "Personal Webpage"
-  tagline: My great project tagline
+  tagline: My very great project tagline
   actions:
     - theme: brand
       text: Markdown Examples
