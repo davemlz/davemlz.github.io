@@ -1,6 +1,9 @@
 {
   "scripts": {
+    "publications:generate": "python docs/generate_publications.py",
+    "predocs:dev": "npm run publications:generate",
     "docs:dev": "vitepress dev docs",
+    "predocs:build": "npm run publications:generate",
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs"
   },

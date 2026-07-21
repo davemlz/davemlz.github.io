@@ -2,6 +2,7 @@ import { h } from 'vue'
 import DefaultTheme from 'vitepress/theme'
 import { useData } from 'vitepress'
 import PageBanner from './PageBanner.vue'
+import PublicationSearch from './PublicationSearch.vue'
 import './custom.css'
 
 export default {
@@ -20,5 +21,6 @@ export default {
   },
   enhanceApp({ app }) {
     app.component('PageBanner', PageBanner)
+    app.component('PublicationSearch', PublicationSearch)
   }
 }
