@@ -17,6 +17,10 @@ description: Selected scientific publications by David Montero Loaiza.
 
 <div class="publication-list">
   <article class="publication-item">
+    <span class="publication-tag">Preprint</span>
+    <p><strong>Montero, D.</strong>, Aybar, C., Mahecha, M. D., & Gómez-Chova, L. (2026). <strong>Towards an open registry of Earth observation instruments</strong>. <em>arXiv</em>. <a href="https://doi.org/10.48550/ARXIV.2606.13923">https://doi.org/10.48550/ARXIV.2606.13923</a></p>
+  </article>
+  <article class="publication-item">
     <span class="publication-tag">Research article</span>
     <p>Mahecha, M. D., Kraemer, G., Reinhardt, M., <strong>Montero, D.</strong>, Gans, F., Bastos, A., Feilhauer, H., Flik, I., Ji, C., Kattenborn, T., Migliavacca, M., Mönks, M., Quaas, J., Sippel, S., Walther, S., Wieneke, S., Wirth, C., &amp; Camps-Valls, G. (2026). <strong>Accelerated north–east shift of the global green wave trajectory</strong>. <em>Proceedings of the National Academy of Sciences</em>, 123(9). <a href="https://doi.org/10.1073/pnas.2515835123">https://doi.org/10.1073/pnas.2515835123</a></p>
   </article>
