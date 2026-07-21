@@ -1,5 +1,4 @@
 ---
-
 outline: deep
 description: Talks, workshops, tutorials, and articles featuring David Montero Loaiza.
 ---

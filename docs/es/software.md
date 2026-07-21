@@ -69,13 +69,6 @@ description: Software de código abierto creado y mantenido por David Montero Lo
       <p>Obtén reflectancia ajustada por BRDF al nadir de Sentinel-2 para analizar series temporales coherentes.</p>
     </div>
   </a>
-  <a class="software-card" href="https://github.com/awesome-spectral-indices/spectral">
-    <div class="software-card__image"><img src="/software/software-spectral.png" alt="spectral" loading="lazy" /></div>
-    <div class="software-card__body">
-      <div class="software-card__meta"><h2>spectral</h2><span class="tag">JavaScript</span></div>
-      <p>Awesome Spectral Indices para el editor de código JavaScript de Google Earth Engine.</p>
-    </div>
-  </a>
 </div>
 
 ## Google Earth Engine

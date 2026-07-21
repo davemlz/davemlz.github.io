@@ -69,13 +69,6 @@ description: Open-source software created and maintained by David Montero Loaiza
       <p>Obtain Nadir BRDF-Adjusted Reflectance from Sentinel-2 for consistent time-series analysis.</p>
     </div>
   </a>
-  <a class="software-card" href="https://github.com/awesome-spectral-indices/spectral">
-    <div class="software-card__image"><img src="/software/software-spectral.png" alt="spectral" loading="lazy" /></div>
-    <div class="software-card__body">
-      <div class="software-card__meta"><h2>spectral</h2><span class="tag">JavaScript</span></div>
-      <p>Awesome Spectral Indices for the Google Earth Engine JavaScript Code Editor.</p>
-    </div>
-  </a>
 </div>
 
 ## Google Earth Engine

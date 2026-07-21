@@ -1,6 +1,4 @@
 ---
-
-
 outline: deep
 description: Selected scientific publications by David Montero Loaiza.
 ---
