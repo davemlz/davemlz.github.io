@@ -73,6 +73,10 @@ description: Publicaciones científicas seleccionadas de David Montero Loaiza.
     <span class="publication-tag">Artículo científico</span>
     <p>Ji, C., Fincke, T., Benson, V., Camps-Valls, G., Fernández-Torres, M.-Á., Gans, F., Kraemer, G., Martinuzzi, F., <strong>Montero, D.</strong>, Mora, K., Pellicer-Valero, O. J., Robin, C., Söchting, M., Weynants, M., &amp; Mahecha, M. D. (2025). <strong>DeepExtremeCubes: Earth system spatio-temporal data for assessing compound heatwave and drought impacts</strong>. <em>Scientific Data</em>, 12(1). <a href="https://doi.org/10.1038/s41597-025-04447-5">https://doi.org/10.1038/s41597-025-04447-5</a></p>
   </article>
+  <article class="publication-item" data-publication-key="aybar2025missing">
+    <span class="publication-tag">Artículo de conferencia</span>
+    <p>Aybar, C., Contreras, J., Ma, C., Pellicer-Valero, O. J., Mateo-García, G., Gómez-Chova, L., Camps-Valls, G., Lehmann, N., Czerkawski, M., <strong>Montero, D.</strong>, Mahecha, M. D., &amp; Aybar, I. (2025). <strong>The Missing Piece: Standardising for AI-ready Earth Observation Datasets</strong>. <em>In TerraBytes - ICML 2025 workshop</em>. <a href="https://openreview.net/forum?id=HV6F0dsGLK">https://openreview.net/forum?id=HV6F0dsGLK</a></p>
+  </article>
 </div>
 
 ## 2024
